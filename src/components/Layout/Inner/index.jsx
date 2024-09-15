@@ -22,6 +22,7 @@ export default function Layout({ children }) {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/faq">FAQ</Link>
           </div>
           {children}
         </motion.div>

@@ -10,6 +10,7 @@ export default function App({ Component, pageProps, router }) {
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
+        <Link href="/faq">FAQ</Link>
       </div>
       <AnimatePresence mode="wait">
         <Component key={router.route} {...pageProps} />
