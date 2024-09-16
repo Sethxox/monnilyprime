@@ -1,5 +1,7 @@
-import Curve from "@/components/Layout/Curve";
+import Stairs from "@/components/Layout/Stairs";
 import Head from "next/head";
+import RoundedButton from "../../components/Layout/RoundedButton";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -10,11 +12,10 @@ export default function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Curve backgroundColor={"#BCF366"}>
-        <h1>About</h1>
+      <Stairs backgroundColor={"#BCF366"}>
+        <h1 className="text-center font-black text-7xl pb-7">About</h1>
         <div className="body">
           <p>
-            {" "}
             Nullam mattis mattis dictum. Praesent sit amet condimentum mi, quis
             venenatis lectus. Phasellus ac ante id purus viverra hendrerit quis
             at ex. Donec vitae augue pulvinar augue dictum fermentum dapibus nec
@@ -28,7 +29,29 @@ export default function About() {
             vel venenatis.
           </p>
         </div>
-      </Curve>
+      </Stairs>
+      <div className="text-blue-50 px-[2.5rem] py-[2rem] flex justify-evenly">
+        <RoundedButton>
+          <p className="py-4 font-semibold ">
+            <Link href="/faq">FAQ</Link>
+          </p>
+        </RoundedButton>
+        <RoundedButton>
+          <p className="py-4 font-semibold ">
+            <Link href="/privacypolicy">Privacy Policy</Link>
+          </p>
+        </RoundedButton>
+        <RoundedButton>
+          <p className="py-4 font-semibold ">
+            <Link href="/contact">Contact</Link>
+          </p>
+        </RoundedButton>
+        <RoundedButton>
+          <p className="py-4 font-semibold ">
+            <Link href="/">Home</Link>
+          </p>
+        </RoundedButton>
+      </div>
     </>
   );
 }

@@ -1,5 +1,9 @@
 import Head from "next/head";
 import Curve from "@/components/Layout/Curve";
+import RoundedButton from "../components/Layout/RoundedButton";
+import Link from "next/link";
+// import Land from "../Landing/landing";
+
 
 export default function Home() {
   return (
@@ -10,34 +14,64 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Curve backgroundColor={"#B0AD98"}>
-        <h1>Home</h1>
-        <div className="body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            imperdiet nibh sit amet velit dignissim, non tempus nisl
-            pellentesque. Praesent sagittis magna sit amet ex blandit, id
-            pharetra lectus feugiat. Praesent sit amet congue ipsum, in ultrices
-            neque. In dapibus in purus vitae dignissim. Quisque molestie
-            ullamcorper elementum. Sed sodales erat augue. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Duis aliquet quis lectus vitae
-            venenatis. Aliquam erat volutpat. Nulla maximus sodales nibh dapibus
-            congue. Integer nec pharetra felis, quis commodo elit. Fusce et
-            aliquet neque. Vivamus leo diam, pharetra ut lorem eu, suscipit
-            egestas ipsum. Aenean mauris ligula, laoreet ut volutpat sit amet,
-            convallis et turpis.
-          </p>
-          <p>
-            Quisque molestie ullamcorper elementum. Sed sodales erat augue.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            aliquet quis lectus vitae venenatis. Aliquam erat volutpat. Nulla
-            maximus sodales nibh dapibus congue. Integer nec pharetra felis,
-            quis commodo elit. Fusce et aliquet neque. Vivamus leo diam,
-            pharetra ut lorem eu, suscipit egestas ipsum. Aenean mauris ligula,
-            laoreet ut volutpat sit amet, convallis et turpis.
-          </p>
+      <div className="">
+        <Curve backgroundColor={"#eee8d5"}>
+          <h1 className="text-center font-black text-9xl pb-5">rampar</h1>
+          <h2 className="text-center font-black text-7xl py-5 ">
+            {" "}
+            The gate way to fast and effective txn of liquidity
+          </h2>
+          <div className="body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+              imperdiet nibh sit amet velit dignissim, non tempus nisl
+              pellentesque. Praesent sagittis magna sit amet ex blandit, id
+              pharetra lectus feugiat. Praesent sit amet congue ipsum, in
+              ultrices neque. In dapibus in purus vitae dignissim. Quisque
+              molestie ullamcorper elementum. Sed sodales erat augue. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet
+              quis lectus vitae venenatis. Aliquam erat volutpat. Nulla maximus
+              sodales nibh dapibus congue. Integer nec pharetra felis, quis
+              commodo elit. Fusce et aliquet neque. Vivamus leo diam, pharetra
+              ut lorem eu, suscipit egestas ipsum. Aenean mauris ligula, laoreet
+              ut volutpat sit amet, convallis et turpis.
+            </p>
+            <p>
+              Quisque molestie ullamcorper elementum. Sed sodales erat augue.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              aliquet quis lectus vitae venenatis. Aliquam erat volutpat. Nulla
+              maximus sodales nibh dapibus congue. Integer nec pharetra felis,
+              quis commodo elit. Fusce et aliquet neque. Vivamus leo diam,
+              pharetra ut lorem eu, suscipit egestas ipsum. Aenean mauris
+              ligula, laoreet ut volutpat sit amet, convallis et turpis.
+            </p>
+          </div>
+          {/* <Land /> */}
+        </Curve>
+        <div className="text-blue-50 px-[2.5rem] py-[2rem] flex justify-evenly">
+          <RoundedButton>
+            <p className="py-4 font-semibold ">
+              <Link href="/about">About</Link>
+            </p>
+          </RoundedButton>
+          <RoundedButton>
+            <p className="py-4 font-semibold ">
+              <Link href="/contact">Get in touch</Link>
+            </p>
+          </RoundedButton>
+
+          <RoundedButton>
+            <p className="py-4 font-semibold ">
+              <Link href="/faq">FAQ</Link>
+            </p>
+          </RoundedButton>
+          <RoundedButton>
+            <p className="py-4 font-semibold ">
+              <Link href="/contact">Privacy Policy</Link>
+            </p>
+          </RoundedButton>
         </div>
-      </Curve>
+      </div>
     </>
   );
 }

@@ -5,17 +5,20 @@
 .main{
     .header{
         display: flex;
-        gap: 15px;
+        gap: 50px;
         padding: 40px;
         height: 30px;
         position: fixed;
+       align-content: space-between;
         left: 0px;
         top: 0px;
         a{
             text-decoration: none;
-            color: black;
+            color: rgb(25, 24, 24);
             &:hover{
                 text-decoration: underline;
+            }
+            &:active{font-size: large;
             }
         }
     }
@@ -24,7 +27,8 @@
         min-height: calc(100vh - 80px);
     }
     h1{
-        margin-top: 50px;
+        margin-top: 100px;
+        
     }
     .body{
         display: flex;

@@ -1,9 +1,9 @@
-import Curve from "@/components/Layout/Curve";
+import Stairs from "@/components/Layout/Stairs";
 import Head from "next/head";
 import RoundedButton from "../../components/Layout/RoundedButton";
 import Link from "next/link";
 
-export default function Contact() {
+export default function PrivacyPolicy() {
   return (
     <>
       <Head>
@@ -12,8 +12,8 @@ export default function Contact() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Curve backgroundColor="#6E97D0">
-        <h1 className="text-center font-black text-7xl pb-7">Contact</h1>
+      <Stairs backgroundColor="#f2efe6">
+        <h1 className="text-center font-black text-7xl pb-7">Privacy Policy</h1>
         <div className="body">
           <p>
             Fusce tristique nisi eu sodales suscipit. Praesent ante ipsum,
@@ -33,13 +33,8 @@ export default function Contact() {
             Vivamus ornare ex a nibh egestas, id euismod mi euismod.
           </p>
         </div>
-      </Curve>
+      </Stairs>
       <div className="text-blue-50 px-[2.5rem] py-[2rem] flex justify-evenly">
-        <RoundedButton>
-          <p className="py-4 font-semibold ">
-            <Link href="/">Home</Link>
-          </p>
-        </RoundedButton>
         <RoundedButton>
           <p className="py-4 font-semibold ">
             <Link href="/about">About</Link>
@@ -52,7 +47,12 @@ export default function Contact() {
         </RoundedButton>
         <RoundedButton>
           <p className="py-4 font-semibold ">
-            <Link href="/privacypolicy">Privacy Policy</Link>
+            <Link href="/contact">Contact</Link>
+          </p>
+        </RoundedButton>
+        <RoundedButton>
+          <p className="py-4 font-semibold ">
+            <Link href="/">Home</Link>
           </p>
         </RoundedButton>
       </div>
