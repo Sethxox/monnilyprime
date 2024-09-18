@@ -9,7 +9,7 @@ export default function App({ Component, pageProps, router }) {
     <div className="main">
       <div className="header ">
         <Magnetic>
-          <Link href="/">Rampar</Link>
+          <Link href="/">Loop</Link>
         </Magnetic>
        
           <Magnetic>

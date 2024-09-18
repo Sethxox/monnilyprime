@@ -2,6 +2,15 @@ import Curve from "@/components/Layout/Curve";
 import Head from "next/head";
 import RoundedButton from "../../components/Layout/RoundedButton";
 import Link from "next/link";
+import Contactx from "../../components/Layout/Contact/index";
+import dynamic from "next/dynamic";
+
+const Land = dynamic(
+  () => import("../../components/Layout/Landing/index.jsx"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Contact() {
   return (
@@ -12,8 +21,8 @@ export default function Contact() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Curve backgroundColor="#6E97D0">
-        <h1 className="text-center font-black text-7xl pb-7">Contact</h1>
+      <Curve backgroundColor="#ffffff">
+        <h1 className="text-center font-black text-7xl pb-7">Contact Us</h1>
         <div className="body">
           <p>
             Fusce tristique nisi eu sodales suscipit. Praesent ante ipsum,
@@ -33,28 +42,34 @@ export default function Contact() {
             Vivamus ornare ex a nibh egestas, id euismod mi euismod.
           </p>
         </div>
+        <Land />
       </Curve>
       <div className="text-blue-50 px-[2.5rem] py-[2rem] flex justify-evenly">
         <RoundedButton>
-          <p className="py-4 font-semibold ">
+          <p className="py-5 font-bold ">
             <Link href="/">Home</Link>
           </p>
         </RoundedButton>
         <RoundedButton>
-          <p className="py-4 font-semibold ">
+          <p className="py-5 font-bold ">
             <Link href="/about">About</Link>
           </p>
         </RoundedButton>
         <RoundedButton>
-          <p className="py-4 font-semibold ">
+          <p className="py-5 font-bold ">
             <Link href="/faq">FAQ</Link>
           </p>
         </RoundedButton>
         <RoundedButton>
-          <p className="py-4 font-semibold ">
-            <Link href="/privacypolicy">Privacy Policy</Link>
+          <p className=" ">
+            <Link className="py-5 font-bold" href="/privacypolicy">
+              Privacy Policy
+            </Link>
           </p>
         </RoundedButton>
+      </div>
+      <div>
+        <Contactx />
       </div>
     </>
   );

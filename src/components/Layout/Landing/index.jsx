@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import styles from "./style.module.scss";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
@@ -15,18 +14,23 @@ export default function Landing() {
   let direction = -1;
 
   useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-        scrub: 0.25,
-        start: 0,
-        end: window.innerHeight,
-        onUpdate: (e) => (direction = e.direction * -1),
-      },
-      x: "-500px",
-    });
-    requestAnimationFrame(animate);
+    // Ensure that gsap and ScrollTrigger are only registered client-side
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(slider.current, {
+        scrollTrigger: {
+          trigger: document.documentElement,
+          scrub: 0.25,
+          start: 0,
+          end: window.innerHeight,
+          onUpdate: (e) => (direction = e.direction * -1),
+        },
+        x: "-800px",
+      });
+
+      requestAnimationFrame(animate);
+    }
   }, []);
 
   const animate = () => {
@@ -48,11 +52,17 @@ export default function Landing() {
       animate="enter"
       className={styles.landing}
     >
-      {/* <Image src="" fill={true} alt="background" /> */}
+
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>The ramp path to liquid Access -</p>
-          <p ref={secondText}>The ramp path to liquid Access -</p>
+          <p ref={firstText}>
+            <span>Loop</span> &nbsp; &nbsp; ** Easy Loop-in to Liquidity
+            Access.. ** &nbsp; &nbsp;
+          </p>
+          <p ref={secondText}>
+            <span>Loop</span> &nbsp; &nbsp; ** Easy Loop-in to Liquidity Access.
+            ** &nbsp; &nbsp;
+          </p>
         </div>
       </div>
     </motion.main>

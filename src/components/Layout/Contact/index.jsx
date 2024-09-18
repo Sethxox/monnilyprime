@@ -1,25 +1,22 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
-import Rounded from "../components/Layout/RoundedButton";
 import { useRef } from "react";
 import { useScroll, motion, useTransform, useSpring } from "framer-motion";
-import Magnetic from "../components/Layout/Magnetic";
+import Magnetic from "../Magnetic";
 
-export default function Contact() {
+export default function Index() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-200, 0]);
   const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
   return (
     <motion.div style={{ y }} ref={container} className={styles.contact}>
       <div className={styles.body}>
-        <div className={ styles.title }>
-          {""}
-        </div>
+        <div className={styles.title}></div>
         <div className={styles.info}>
           <div>
             <span>

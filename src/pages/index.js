@@ -1,9 +1,14 @@
 import Head from "next/head";
 import Curve from "@/components/Layout/Curve";
+import Contactx from "../components/Layout/Contact/index";
 import RoundedButton from "../components/Layout/RoundedButton";
 import Link from "next/link";
-// import Land from "../Landing/landing";
+import dynamic from "next/dynamic";
 
+// Dynamically import the Landing component
+const Land = dynamic(() => import("../components/Layout/Landing/index"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -15,38 +20,62 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="">
-        <Curve backgroundColor={"#eee8d5"}>
-          <h1 className="text-center font-black text-9xl pb-5">rampar</h1>
+        <Curve backgroundColor={"#f5fbff"}>
+          <h1 className="text-center font-black text-9xl pb-5">Loop</h1>
           <h2 className="text-center font-black text-7xl py-5 ">
-            {" "}
-            The gate way to fast and effective txn of liquidity
+            The gateway to fast and effective txn of liquidity
           </h2>
           <div className="body">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              imperdiet nibh sit amet velit dignissim, non tempus nisl
-              pellentesque. Praesent sagittis magna sit amet ex blandit, id
-              pharetra lectus feugiat. Praesent sit amet congue ipsum, in
-              ultrices neque. In dapibus in purus vitae dignissim. Quisque
-              molestie ullamcorper elementum. Sed sodales erat augue. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet
-              quis lectus vitae venenatis. Aliquam erat volutpat. Nulla maximus
-              sodales nibh dapibus congue. Integer nec pharetra felis, quis
-              commodo elit. Fusce et aliquet neque. Vivamus leo diam, pharetra
-              ut lorem eu, suscipit egestas ipsum. Aenean mauris ligula, laoreet
-              ut volutpat sit amet, convallis et turpis.
+              Fusce tristique nisi eu sodales suscipit. Praesent ante ipsum,
+              suscipit eu dapibus in, tincidunt et massa. Sed pulvinar consequat
+              elit at placerat. Maecenas bibendum in purus sed hendrerit.
+              Integer efficitur mattis consectetur. Sed sagittis tortor non
+              mauris laoreet ultrices. Nunc sit amet sem suscipit, accumsan
+              justo sed, laoreet odio. Phasellus pharetra arcu nibh, non
+              scelerisque ipsum rutrum quis. Fusce quis commodo leo. Mauris ut
+              congue mauris.
             </p>
             <p>
-              Quisque molestie ullamcorper elementum. Sed sodales erat augue.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              aliquet quis lectus vitae venenatis. Aliquam erat volutpat. Nulla
-              maximus sodales nibh dapibus congue. Integer nec pharetra felis,
-              quis commodo elit. Fusce et aliquet neque. Vivamus leo diam,
-              pharetra ut lorem eu, suscipit egestas ipsum. Aenean mauris
-              ligula, laoreet ut volutpat sit amet, convallis et turpis.
+              Duis tempus risus ut est malesuada, sit amet auctor tortor tempus.
+              Sed luctus, odio a vulputate elementum, nulla enim bibendum ipsum,
+              in ornare elit nisi quis tortor. Nullam quis condimentum tellus.
+              Nullam non eros sem. Cras molestie convallis dolor, quis egestas
+              turpis congue in. Maecenas ut tellus at nunc consectetur
+              facilisis. Vivamus ornare ex a nibh egestas, id euismod mi
+              euismod.
+            </p>
+            <p>
+              Duis tempus risus ut est malesuada, sit amet auctor tortor tempus.
+              Sed luctus, odio a vulputate elementum, nulla enim bibendum ipsum,
+              in ornare elit nisi quis tortor. Nullam quis condimentum tellus.
+              Nullam non eros sem. Cras molestie convallis dolor, quis egestas
+              turpis congue in. Maecenas ut tellus at nunc consectetur
+              facilisis. Vivamus ornare ex a nibh egestas, id euismod mi
+              euismod.
             </p>
           </div>
-          {/* <Land /> */}
+          <div className="mt-10 mb-[12.5rem] grid  grid-rows-3 grid-flow-row gap-3 ">
+            <div className=" grid place-items-center">
+              <div>bla bla hello</div>
+            </div>
+            <div className=" grid place-items-start">
+              <div>bla bla hello</div>
+            </div>
+            <div className="grid place-items-end">
+              <div>bla bla hello</div>
+            </div>
+          </div>
+
+          <div className=" mt-10 grid grid-rows-4 grid-cols-2 gap-5 ">
+            <div className="grid row-span-3 bg-green-300">x1</div>
+            <div className="">x2</div>
+            <div className="bg-slate-400">x3</div>
+            <div className="grid row-span-2 bg-blue-500">x4</div>
+            <div className="">x5</div>
+            <div className="grid row-span-"></div>
+          </div>
+          <Land />
         </Curve>
         <div className="text-blue-50 px-[2.5rem] py-[2rem] flex justify-evenly">
           <RoundedButton>
@@ -67,9 +96,12 @@ export default function Home() {
           </RoundedButton>
           <RoundedButton>
             <p className="py-4 font-semibold ">
-              <Link href="/contact">Privacy Policy</Link>
+              <Link href="/privacypolicy">Privacy Policy</Link>
             </p>
           </RoundedButton>
+        </div>
+        <div>
+          <Contactx />
         </div>
       </div>
     </>

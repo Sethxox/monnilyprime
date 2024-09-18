@@ -2,6 +2,12 @@ import Stairs from "@/components/Layout/Stairs";
 import Head from "next/head";
 import RoundedButton from "../../components/Layout/RoundedButton";
 import Link from "next/link";
+import Contact from "../../components/Layout/Contact/index";
+import dynamic from "next/dynamic";
+
+const Land = dynamic(() => import("../../components/Layout/Landing/index.jsx"), {
+  ssr: false,
+});
 
 export default function PrivacyPolicy() {
   return (
@@ -12,7 +18,7 @@ export default function PrivacyPolicy() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Stairs backgroundColor="#f2efe6">
+      <Stairs backgroundColor="#ffffff">
         <h1 className="text-center font-black text-7xl pb-7">Privacy Policy</h1>
         <div className="body">
           <p>
@@ -32,7 +38,16 @@ export default function PrivacyPolicy() {
             turpis congue in. Maecenas ut tellus at nunc consectetur facilisis.
             Vivamus ornare ex a nibh egestas, id euismod mi euismod.
           </p>
+          <p>
+            Duis tempus risus ut est malesuada, sit amet auctor tortor tempus.
+            Sed luctus, odio a vulputate elementum, nulla enim bibendum ipsum,
+            in ornare elit nisi quis tortor. Nullam quis condimentum tellus.
+            Nullam non eros sem. Cras molestie convallis dolor, quis egestas
+            turpis congue in. Maecenas ut tellus at nunc consectetur facilisis.
+            Vivamus ornare ex a nibh egestas, id euismod mi euismod.
+          </p>
         </div>
+      <Land />
       </Stairs>
       <div className="text-blue-50 px-[2.5rem] py-[2rem] flex justify-evenly">
         <RoundedButton>
@@ -47,7 +62,7 @@ export default function PrivacyPolicy() {
         </RoundedButton>
         <RoundedButton>
           <p className="py-4 font-semibold ">
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">Get in touch</Link>
           </p>
         </RoundedButton>
         <RoundedButton>
@@ -55,6 +70,9 @@ export default function PrivacyPolicy() {
             <Link href="/">Home</Link>
           </p>
         </RoundedButton>
+      </div>
+      <div>
+        <Contact />
       </div>
     </>
   );

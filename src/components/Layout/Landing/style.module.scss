@@ -1,7 +1,7 @@
 .landing{
     position: relative;
     display: flex;
-    height: 100vh;
+    height: 22rem;
     overflow: hidden;
 
     img{
@@ -10,7 +10,6 @@
     
     .sliderContainer{
       position: absolute;
-      top: calc(100vh - 350px);
     }
     
     .slider{
@@ -22,7 +21,7 @@
       position: relative;
       margin: 0px;
       color: rgb(60, 6, 6);
-      font-size: 230px;
+      font-size: 210px;
       font-weight: 500;
       padding-right: 50px;
     }
